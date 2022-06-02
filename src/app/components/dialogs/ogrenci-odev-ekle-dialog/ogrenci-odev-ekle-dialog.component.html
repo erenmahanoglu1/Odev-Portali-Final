@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>{{dialogBaslik}}</span>
+  
+  </mat-toolbar>
+  <form [formGroup]="frm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ödev Adi</mat-label>
+      <mat-select placeholder="Ödev Seçiniz" formControlName="odevAdi">
+        <mat-option [value]="kayit.odevId" *ngFor="let kayit of odevler">{{kayit.odevAdi}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  
+  </form>
+  <button mat-raised-button color="primary" [disabled]="frm.invalid" (click)="dialogRef.close(frm.value)">Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+  <div class="container"></div>

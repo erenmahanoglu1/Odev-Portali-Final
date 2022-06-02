@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="frm">
+    <mat-form-field>
+      <mat-label>Ders Adı</mat-label>
+      <input matInput placeholder="Ders Adi" name="dersAdi" formControlName="dersAdi" required type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ders Kredi</mat-label>
+      <input matInput placeholder="Ders Kredi" name="dersKredi" formControlName="dersKredi" required type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ders Kodu</mat-label>
+      <input matInput placeholder="Ders Kodu" name="dersKodu" formControlName="dersKodu" required type="text">
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button color="primary" [disabled]="frm.invalid" (click)="dialogRef.close(frm.value)">Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+  
+</div>

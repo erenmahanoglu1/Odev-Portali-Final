@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span>{{dialogBaslik}}</span>
+  
+  </mat-toolbar>
+  <form [formGroup]="frm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Odev Adi</mat-label>
+      <input matInput placeholder="Odev Adi" name="odevAdi" required>
+    </mat-form-field>
+
+
+  
+  </form>
+  <button mat-raised-button color="primary" [disabled]="frm.invalid" (click)="dialogRef.close(frm.value)">Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+  <div class="container"></div>
